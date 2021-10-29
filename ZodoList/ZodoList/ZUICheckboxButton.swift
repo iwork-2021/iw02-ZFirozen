@@ -23,8 +23,8 @@ class ZUICheckboxButton: UIButton {
         super.init(frame: frame)
         reversesTitleShadowWhenHighlighted = true
         setTitle(nil, for: .normal)
-        setTitleColor(UIColor.blue, for: .normal)
-        backgroundColor = UIColor.white
+        setTitleColor(UIColor.clear, for: .normal)
+        backgroundColor = UIColor.clear
         let minSizeLength = min(frame.height, frame.width)
         layer.frame.size = CGSize(width: minSizeLength, height: minSizeLength)
         layer.cornerRadius = min(frame.height, frame.width) / 2
@@ -32,20 +32,29 @@ class ZUICheckboxButton: UIButton {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        super.init(coder: coder)
+        reversesTitleShadowWhenHighlighted = true
+        setTitle(nil, for: .normal)
+        setTitleColor(UIColor.clear, for: .normal)
+        backgroundColor = UIColor.clear
+        let minSizeLength = min(frame.height, frame.width)
+        layer.frame.size = CGSize(width: minSizeLength, height: minSizeLength)
+        layer.cornerRadius = min(frame.height, frame.width) / 2
+        addTarget(self, action: #selector(checkboxButtonTapped), for: .touchUpInside)
     }
     
     @IBAction func checkboxButtonTapped() {
         if isChecked {
             isChecked = false
             setTitle(nil, for: .normal)
-            setTitleColor(UIColor.blue, for: .normal)
-            backgroundColor = UIColor.white
+            setTitleColor(UIColor.clear, for: .normal)
+            backgroundColor = UIColor.clear
         } else {
             isChecked = true
             setTitle("✓", for: .normal)
             setTitleColor(UIColor.white, for: .normal)
-            backgroundColor = UIColor.green
+            backgroundColor = UIColor.clear
         }
+        print("touched!")
     }
 }
