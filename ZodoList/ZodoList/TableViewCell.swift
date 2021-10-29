@@ -9,6 +9,8 @@ import UIKit
 
 class TableViewCell: UITableViewCell {
 
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var status: ZUICheckboxButton!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

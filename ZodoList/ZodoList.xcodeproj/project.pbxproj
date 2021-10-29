@@ -17,6 +17,7 @@
 		AA51A5E5271FF412003AD5F3 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5E4271FF412003AD5F3 /* TodoTableViewController.swift */; };
 		AA51A5E7271FF48B003AD5F3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5E6271FF48B003AD5F3 /* TableViewCell.swift */; };
 		AA51A5E927206A60003AD5F3 /* ZUICheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5E827206A60003AD5F3 /* ZUICheckboxButton.swift */; };
+		AAEC6132272C522700518178 /* ZodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEC6131272C522700518178 /* ZodoItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		AA51A5E4271FF412003AD5F3 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 		AA51A5E6271FF48B003AD5F3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		AA51A5E827206A60003AD5F3 /* ZUICheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZUICheckboxButton.swift; sourceTree = "<group>"; };
+		AAEC6131272C522700518178 /* ZodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				AA51A5B4271FF2C3003AD5F3 /* AppDelegate.swift */,
 				AA51A5B6271FF2C3003AD5F3 /* SceneDelegate.swift */,
 				AA51A5BA271FF2C3003AD5F3 /* Main.storyboard */,
+				AAEC6131272C522700518178 /* ZodoItem.swift */,
 				AA51A5E827206A60003AD5F3 /* ZUICheckboxButton.swift */,
 				AA51A5E6271FF48B003AD5F3 /* TableViewCell.swift */,
 				AA51A5E4271FF412003AD5F3 /* TodoTableViewController.swift */,
@@ -266,6 +269,7 @@
 			files = (
 				AA51A5B5271FF2C3003AD5F3 /* AppDelegate.swift in Sources */,
 				AA51A5E927206A60003AD5F3 /* ZUICheckboxButton.swift in Sources */,
+				AAEC6132272C522700518178 /* ZodoItem.swift in Sources */,
 				AA51A5E7271FF48B003AD5F3 /* TableViewCell.swift in Sources */,
 				AA51A5E5271FF412003AD5F3 /* TodoTableViewController.swift in Sources */,
 				AA51A5B7271FF2C3003AD5F3 /* SceneDelegate.swift in Sources */,

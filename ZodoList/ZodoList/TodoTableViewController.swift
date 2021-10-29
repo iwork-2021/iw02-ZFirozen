@@ -8,7 +8,11 @@
 import UIKit
 
 class TodoTableViewController: UITableViewController {
-
+    
+    var items:[ZodoItem] = [
+        ZodoItem(title: "TestItem", isChecked: true)
+    ]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -17,29 +21,34 @@ class TodoTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return items.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "todoCell", for: indexPath) as! TableViewCell
+        let item = items[indexPath.row]
         // Configure the cell...
-
+        cell.title.text! = item.title
+        cell.status.isChecked = item.isChecked
         return cell
     }
-    */
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: TableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        items.remove(at: indexPath.row)
+        self.tableView.deleteRows(at: [indexPath], with: .automatic)
+    }
 
     /*
     // Override to support conditional editing of the table view.
