@@ -24,7 +24,7 @@ class ZodoTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setStatus(doneStatus: Bool) {
+    func setStatus(doneStatus: Bool, textColor: UIColor) {
         if doneStatus != isDone {
             self.isDone = doneStatus
             self.status.statusUpdate(newStatus: isDone)
@@ -33,9 +33,19 @@ class ZodoTableViewCell: UITableViewCell {
                 self.backgroundColor = UIColor.systemGreen
                 self.tintColor = UIColor.white
             } else {
-                self.title.textColor = UIColor.black
-                self.backgroundColor = UIColor.white
-                self.tintColor = UIColor.link
+                self.title.textColor = textColor
+                self.backgroundColor = UIColor.clear
+                if textColor == UIColor.black {
+                    self.tintColor = UIColor.link
+                } else {
+                    self.tintColor = UIColor.white
+                }
+            }
+        } else {
+            if isDone {
+                self.title.textColor = UIColor.white
+            } else {
+                self.title.textColor = textColor
             }
         }
     }

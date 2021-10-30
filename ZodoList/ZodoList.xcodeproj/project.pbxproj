@@ -18,6 +18,7 @@
 		AA51A5E7271FF48B003AD5F3 /* ZodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5E6271FF48B003AD5F3 /* ZodoTableViewCell.swift */; };
 		AA51A5E927206A60003AD5F3 /* ZUIIsDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5E827206A60003AD5F3 /* ZUIIsDoneButton.swift */; };
 		AA632B61272C7B3300CC5E62 /* ZodoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA632B60272C7B3300CC5E62 /* ZodoItemViewController.swift */; };
+		AA74019D272D8D770083C29E /* ZodoThemeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA74019C272D8D770083C29E /* ZodoThemeViewController.swift */; };
 		AAEC6132272C522700518178 /* ZodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEC6131272C522700518178 /* ZodoItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		AA51A5E6271FF48B003AD5F3 /* ZodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodoTableViewCell.swift; sourceTree = "<group>"; };
 		AA51A5E827206A60003AD5F3 /* ZUIIsDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZUIIsDoneButton.swift; sourceTree = "<group>"; };
 		AA632B60272C7B3300CC5E62 /* ZodoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodoItemViewController.swift; sourceTree = "<group>"; };
+		AA74019C272D8D770083C29E /* ZodoThemeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodoThemeViewController.swift; sourceTree = "<group>"; };
 		AAEC6131272C522700518178 /* ZodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -114,6 +116,7 @@
 				AA51A5E827206A60003AD5F3 /* ZUIIsDoneButton.swift */,
 				AA51A5E6271FF48B003AD5F3 /* ZodoTableViewCell.swift */,
 				AA51A5E4271FF412003AD5F3 /* ZodoTableViewController.swift */,
+				AA74019C272D8D770083C29E /* ZodoThemeViewController.swift */,
 				AA632B60272C7B3300CC5E62 /* ZodoItemViewController.swift */,
 				AA51A5BD271FF2C6003AD5F3 /* Assets.xcassets */,
 				AA51A5BF271FF2C6003AD5F3 /* LaunchScreen.storyboard */,
@@ -276,6 +279,7 @@
 				AAEC6132272C522700518178 /* ZodoItem.swift in Sources */,
 				AA51A5E7271FF48B003AD5F3 /* ZodoTableViewCell.swift in Sources */,
 				AA51A5E5271FF412003AD5F3 /* ZodoTableViewController.swift in Sources */,
+				AA74019D272D8D770083C29E /* ZodoThemeViewController.swift in Sources */,
 				AA51A5B7271FF2C3003AD5F3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

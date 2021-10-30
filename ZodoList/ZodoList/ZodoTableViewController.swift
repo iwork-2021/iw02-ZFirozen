@@ -11,6 +11,10 @@ import Photos
 class ZodoTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
     var items:[ZodoItem] = []
+    var textColor: UIColor = UIColor.black
+    var backgroundImage: UIImage?
+    var defaultTintColor: UIColor?
+    @IBOutlet weak var titleZodoList: UINavigationItem!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,7 +46,15 @@ class ZodoTableViewController: UITableViewController, UIImagePickerControllerDel
         let item = items[indexPath.row]
         // Configure the cell...
         cell.title.text! = item.title
-        cell.setStatus(doneStatus: item.isDone)
+        cell.setStatus(doneStatus: item.isDone, textColor: self.textColor)
+        if self.defaultTintColor == nil {
+            self.defaultTintColor = cell.tintColor
+        }
+        if item.isDone || textColor == UIColor.white {
+            cell.tintColor = UIColor.white
+        } else {
+            cell.tintColor = self.defaultTintColor
+        }
         return cell
     }
     
@@ -104,6 +116,14 @@ class ZodoTableViewController: UITableViewController, UIImagePickerControllerDel
             editItemViewController.itemToEdit = item
             editItemViewController.itemIndex = tableView.indexPath(for: cell)!.row
             editItemViewController.editItemDelegate = self
+        } else if segue.identifier == "themeSelect" {
+            let themeSelectViewController = segue.destination as! ZodoThemeViewController
+            if self.tableView.backgroundColor != nil {
+                themeSelectViewController.backgroundColor = self.tableView.backgroundColor!
+            }
+            themeSelectViewController.backgroundImage = self.backgroundImage
+            themeSelectViewController.foregroundColor = self.textColor
+            themeSelectViewController.themeSelectDelegate = self
         }
     }
     
@@ -149,6 +169,22 @@ extension ZodoTableViewController: EditItemDelegate {
     func editItem(newItem: ZodoItem, itemIndex: Int) {
         self.items[itemIndex] = newItem
         self.tableView.reloadData()
+    }
+}
+
+extension ZodoTableViewController: ThemeSelectDelegate {
+    func ThemeSelect(backgroundColor: UIColor, foregroundColor: UIColor) {
+        self.tableView.backgroundColor = backgroundColor
+        self.textColor = foregroundColor
+        if foregroundColor == UIColor.black {
+            self.navigationController?.navigationBar.tintColor = UIColor.link
+        } else {
+            self.navigationController?.navigationBar.tintColor = foregroundColor
+        }
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: foregroundColor]
+        if self.tableView.indexPathsForVisibleRows != nil {
+            self.tableView.reloadRows(at: self.tableView.indexPathsForVisibleRows!, with: .none)
+        }
     }
 }
 
