@@ -1,5 +1,5 @@
 //
-//  ZUICheckboxButton.swift
+//  ZUIIsDoneButton.swift
 //  ZodoList
 //
 //  Created by ZFirozen on 2021/10/20.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ZUICheckboxButton: UIButton {
+class ZUIIsDoneButton: UIButton {
 
     /*
     // Only override draw() if you perform custom drawing.
@@ -17,7 +17,7 @@ class ZUICheckboxButton: UIButton {
     }
     */
     
-    var isChecked: Bool = false
+    var isDone: Bool = false
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -28,7 +28,6 @@ class ZUICheckboxButton: UIButton {
         let minSizeLength = min(frame.height, frame.width)
         layer.frame.size = CGSize(width: minSizeLength, height: minSizeLength)
         layer.cornerRadius = min(frame.height, frame.width) / 2
-        addTarget(self, action: #selector(checkboxButtonTapped), for: .touchUpInside)
     }
     
     required init?(coder: NSCoder) {
@@ -40,21 +39,19 @@ class ZUICheckboxButton: UIButton {
         let minSizeLength = min(frame.height, frame.width)
         layer.frame.size = CGSize(width: minSizeLength, height: minSizeLength)
         layer.cornerRadius = min(frame.height, frame.width) / 2
-        addTarget(self, action: #selector(checkboxButtonTapped), for: .touchUpInside)
     }
     
-    @IBAction func checkboxButtonTapped() {
-        if isChecked {
-            isChecked = false
-            setTitle(nil, for: .normal)
-            setTitleColor(UIColor.clear, for: .normal)
-            backgroundColor = UIColor.clear
-        } else {
-            isChecked = true
+    func statusUpdate(newStatus: Bool) {
+        if newStatus {
+            isDone = true
             setTitle("✓", for: .normal)
             setTitleColor(UIColor.white, for: .normal)
             backgroundColor = UIColor.clear
+        } else {
+            isDone = false
+            setTitle(nil, for: .normal)
+            setTitleColor(UIColor.clear, for: .normal)
+            backgroundColor = UIColor.clear
         }
-        print("touched!")
     }
 }

@@ -7,12 +7,12 @@
 
 import UIKit
 
-class ZodoItem: NSObject {
+class ZodoItem: NSObject, Encodable, Decodable {
     var title: String
-    var isChecked: Bool
+    var isDone: Bool
     
-    init(title: String, isChecked: Bool) {
-        self.isChecked = isChecked
+    init(title: String, isDone: Bool) {
+        self.isDone = isDone
         self.title = title
     }
 }

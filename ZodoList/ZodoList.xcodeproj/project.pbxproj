@@ -14,9 +14,9 @@
 		AA51A5C1271FF2C6003AD5F3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA51A5BF271FF2C6003AD5F3 /* LaunchScreen.storyboard */; };
 		AA51A5CC271FF2C7003AD5F3 /* ZodoListTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5CB271FF2C7003AD5F3 /* ZodoListTests.swift */; };
 		AA51A5D7271FF2C7003AD5F3 /* ZodoListUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5D6271FF2C7003AD5F3 /* ZodoListUITests.swift */; };
-		AA51A5E5271FF412003AD5F3 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5E4271FF412003AD5F3 /* TodoTableViewController.swift */; };
-		AA51A5E7271FF48B003AD5F3 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5E6271FF48B003AD5F3 /* TableViewCell.swift */; };
-		AA51A5E927206A60003AD5F3 /* ZUICheckboxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5E827206A60003AD5F3 /* ZUICheckboxButton.swift */; };
+		AA51A5E5271FF412003AD5F3 /* ZodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5E4271FF412003AD5F3 /* ZodoTableViewController.swift */; };
+		AA51A5E7271FF48B003AD5F3 /* ZodoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5E6271FF48B003AD5F3 /* ZodoTableViewCell.swift */; };
+		AA51A5E927206A60003AD5F3 /* ZUIIsDoneButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA51A5E827206A60003AD5F3 /* ZUIIsDoneButton.swift */; };
 		AA632B61272C7B3300CC5E62 /* ZodoItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA632B60272C7B3300CC5E62 /* ZodoItemViewController.swift */; };
 		AAEC6132272C522700518178 /* ZodoItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAEC6131272C522700518178 /* ZodoItem.swift */; };
 /* End PBXBuildFile section */
@@ -52,9 +52,9 @@
 		AA51A5D2271FF2C7003AD5F3 /* ZodoListUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZodoListUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA51A5D6271FF2C7003AD5F3 /* ZodoListUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodoListUITests.swift; sourceTree = "<group>"; };
 		AA51A5D8271FF2C7003AD5F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		AA51A5E4271FF412003AD5F3 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
-		AA51A5E6271FF48B003AD5F3 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
-		AA51A5E827206A60003AD5F3 /* ZUICheckboxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZUICheckboxButton.swift; sourceTree = "<group>"; };
+		AA51A5E4271FF412003AD5F3 /* ZodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodoTableViewController.swift; sourceTree = "<group>"; };
+		AA51A5E6271FF48B003AD5F3 /* ZodoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodoTableViewCell.swift; sourceTree = "<group>"; };
+		AA51A5E827206A60003AD5F3 /* ZUIIsDoneButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZUIIsDoneButton.swift; sourceTree = "<group>"; };
 		AA632B60272C7B3300CC5E62 /* ZodoItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodoItemViewController.swift; sourceTree = "<group>"; };
 		AAEC6131272C522700518178 /* ZodoItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZodoItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -111,9 +111,9 @@
 				AA51A5B6271FF2C3003AD5F3 /* SceneDelegate.swift */,
 				AA51A5BA271FF2C3003AD5F3 /* Main.storyboard */,
 				AAEC6131272C522700518178 /* ZodoItem.swift */,
-				AA51A5E827206A60003AD5F3 /* ZUICheckboxButton.swift */,
-				AA51A5E6271FF48B003AD5F3 /* TableViewCell.swift */,
-				AA51A5E4271FF412003AD5F3 /* TodoTableViewController.swift */,
+				AA51A5E827206A60003AD5F3 /* ZUIIsDoneButton.swift */,
+				AA51A5E6271FF48B003AD5F3 /* ZodoTableViewCell.swift */,
+				AA51A5E4271FF412003AD5F3 /* ZodoTableViewController.swift */,
 				AA632B60272C7B3300CC5E62 /* ZodoItemViewController.swift */,
 				AA51A5BD271FF2C6003AD5F3 /* Assets.xcassets */,
 				AA51A5BF271FF2C6003AD5F3 /* LaunchScreen.storyboard */,
@@ -272,10 +272,10 @@
 			files = (
 				AA51A5B5271FF2C3003AD5F3 /* AppDelegate.swift in Sources */,
 				AA632B61272C7B3300CC5E62 /* ZodoItemViewController.swift in Sources */,
-				AA51A5E927206A60003AD5F3 /* ZUICheckboxButton.swift in Sources */,
+				AA51A5E927206A60003AD5F3 /* ZUIIsDoneButton.swift in Sources */,
 				AAEC6132272C522700518178 /* ZodoItem.swift in Sources */,
-				AA51A5E7271FF48B003AD5F3 /* TableViewCell.swift in Sources */,
-				AA51A5E5271FF412003AD5F3 /* TodoTableViewController.swift in Sources */,
+				AA51A5E7271FF48B003AD5F3 /* ZodoTableViewCell.swift in Sources */,
+				AA51A5E5271FF412003AD5F3 /* ZodoTableViewController.swift in Sources */,
 				AA51A5B7271FF2C3003AD5F3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
