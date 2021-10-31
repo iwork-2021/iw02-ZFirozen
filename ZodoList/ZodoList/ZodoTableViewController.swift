@@ -169,10 +169,16 @@ extension ZodoTableViewController {
         return path!.appendingPathComponent("ZodoItems.json")
     }
     
+    func skinFilePath()->URL {
+        let path = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first
+        return path!.appendingPathComponent("ZodoSkin.json")
+    }
+    
     func saveAllItems() {
         do {
             let data = try JSONEncoder().encode(items)
             try data.write(to: dataFilePath(), options: .atomic)
+            //try JSONEncoder().encode([self.textColor.writableTypeIdentifiersForItemProvider, self.tableView.backgroundColor?.writableTypeIdentifiersForItemProvider, self.backgroundImage?.writableTypeIdentifiersForItemProvider]).write(to: skinFilePath(), options: .atomic)
         } catch {
             print("Error while saving task \(error.localizedDescription)")
         }

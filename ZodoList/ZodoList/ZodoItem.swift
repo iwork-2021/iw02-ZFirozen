@@ -16,3 +16,17 @@ class ZodoItem: NSObject, Encodable, Decodable {
         self.title = title
     }
 }
+
+/*
+class ZodoTheme: NSObject, Encodable, Decodable {
+    var foregroundColor: UIColor
+    var backgroundColor: UIColor
+    var backgroundImage: UIImage
+    
+    init(foregroundColor: UIColor, backgroundColor: UIColor, backgroundImage: UIImage) {
+        self.foregroundColor = foregroundColor
+        self.backgroundColor = backgroundColor
+        self.backgroundImage = backgroundImage
+    }
+}
+ */
