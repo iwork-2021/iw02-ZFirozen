@@ -8,7 +8,7 @@
 import UIKit
 
 protocol ThemeSelectDelegate {
-    func ThemeSelect(backgroundColor: UIColor, foregroundColor: UIColor)
+    func ThemeSelect(backgroundColor: UIColor, foregroundColor: UIColor, backgroundImage: UIImage?)
 }
 
 class ZodoThemeViewController: UIViewController {
@@ -55,19 +55,30 @@ class ZodoThemeViewController: UIViewController {
         } else {
             foregroundColor = UIColor.white
         }
-        self.themeSelectDelegate?.ThemeSelect(backgroundColor: backgroundColor, foregroundColor: foregroundColor)
+        self.themeSelectDelegate?.ThemeSelect(backgroundColor: backgroundColor, foregroundColor: foregroundColor, backgroundImage: backgroundImage)
         navigationController?.popViewController(animated: true)
         //self.dismiss(animated: true, completion: nil)
     }
     
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "selectImage" {
+            let imagePickerViewController = segue.destination as! ZodoImagePickerViewController
+            imagePickerViewController.imagePickerDelegate = self
+        }
     }
-    */
+    
 
+}
+
+extension ZodoThemeViewController: ImagePickerDelegate {
+    func imageSelected(newImage: UIImage) {
+        self.backgroundImage = newImage
+    }
 }

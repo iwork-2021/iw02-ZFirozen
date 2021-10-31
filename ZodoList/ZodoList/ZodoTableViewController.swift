@@ -8,7 +8,7 @@
 import UIKit
 import Photos
 
-class ZodoTableViewController: UITableViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ZodoTableViewController: UITableViewController {
     
     var items:[ZodoItem] = []
     var textColor: UIColor = UIColor.black
@@ -127,35 +127,6 @@ class ZodoTableViewController: UITableViewController, UIImagePickerControllerDel
         }
     }
     
-    @IBAction func selectBackgroundImage(_ sender: Any) {
-        if UIImagePickerController.isSourceTypeAvailable(.photoLibrary) {
-            let picker = UIImagePickerController()
-            picker.delegate = self
-            picker.sourceType = .photoLibrary
-            // picker.mediaTypes
-            self.present(
-                picker,
-                animated: true,
-                completion: nil
-            )
-        } else {
-            let alert = UIAlertController(
-                title: "Unable to Pick Image",
-                message: "We couldn't start an image-picker. \nPlease check the permission settings.",
-                preferredStyle: .alert)
-            alert.addAction(UIAlertAction(
-                                title: "OK",
-                                style: .default,
-                                handler: nil))
-            self.present(alert, animated: true, completion: nil)
-        }
-    }
-    
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        self.tableView.backgroundView = UIImageView(image: (info[UIImagePickerController.InfoKey.originalImage] as! UIImage))
-        picker.dismiss(animated: true, completion: nil)
-    }
-    
 }
 
 extension ZodoTableViewController: AddItemDelegate {
@@ -173,8 +144,12 @@ extension ZodoTableViewController: EditItemDelegate {
 }
 
 extension ZodoTableViewController: ThemeSelectDelegate {
-    func ThemeSelect(backgroundColor: UIColor, foregroundColor: UIColor) {
-        self.tableView.backgroundColor = backgroundColor
+    func ThemeSelect(backgroundColor: UIColor, foregroundColor: UIColor, backgroundImage: UIImage?) {
+        self.backgroundImage = backgroundImage
+        self.tableView.backgroundView = UIImageView(image: backgroundImage)
+        if backgroundImage == nil {
+            self.tableView.backgroundColor = backgroundColor
+        }
         self.textColor = foregroundColor
         if foregroundColor == UIColor.black {
             self.navigationController?.navigationBar.tintColor = UIColor.link
